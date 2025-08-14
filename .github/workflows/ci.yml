@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+defaults:
+  run:
+    # NOTE: Default option does not include `-o pipefail` as documented
+    # unless explicitly specifying the `bash` shell.
+    # https://github.com/actions/runner/issues/353
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Run test
+        run: |
+          echo 'Success!'

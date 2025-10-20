@@ -55,9 +55,7 @@ rulesets:
           required_status_checks:
             # NOTE: The Integration ID for GitHub Actions is `15368`
             - integration_id: 15368
-              context: lint
-            - integration_id: 15368
-              context: build
+              context: test
   - name: require-signed-commits
     target: branch
     enforcement: active
